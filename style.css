@@ -988,7 +988,7 @@ section:nth-child(odd) .animate.scroll,
     font-size: 2.5rem;
 }
 footer {
-    background-color: #2d2929;
+    background-color: #000000;
     color: white;
     text-align: center;
     padding: 20px 0;
