@@ -78,3 +78,8 @@ document.addEventListener('DOMContentLoaded', function() {
             });
     });
 });
+  function showSection(section) {
+    document.getElementById('certifications').style.display = 'none';
+    document.getElementById('projects').style.display = 'none';
+    document.getElementById(section).style.display = 'block';
+}
