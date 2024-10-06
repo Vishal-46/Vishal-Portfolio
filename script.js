@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function() {
     menuIcon.onclick = () => {
         menuIcon.classList.toggle('bx-x');
         navbar.classList.toggle('active');
-    }
+    };
 
     let sections = document.querySelectorAll('section');
     let navLinks = document.querySelectorAll('header nav a');
@@ -32,11 +32,12 @@ document.addEventListener('DOMContentLoaded', function() {
         header.classList.toggle('sticky', window.scrollY > 100);
         menuIcon.classList.remove('bx-x');
         navbar.classList.remove('active');
+        
         let footer = document.querySelector('footer');
         footer.classList.toggle('show-animate', this.innerHeight + this.scrollY >= document.scrollingElement.scrollHeight);
-    }
+    };
 
-    const roles = ["Front-End Developer", "Orator", "3D Artist", ];
+    const roles = ["Front-End Developer", "Orator", "3D Artist"];
     let currentIndex = 0;
     const roleElement = document.getElementById("role");
 
@@ -65,14 +66,12 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     emailjs.init("gTPL9AIXWAe4j8UXT"); 
-
     document.getElementById('contact-form').addEventListener('submit', function(event) {
-        event.preventDefault();
-    
+        event.preventDefault(); 
         emailjs.sendForm('service_5jd0byp', 'template_cuilran', this)
             .then(function() {
                 alert('Your message has been sent successfully!');
-                document.getElementById('contact-form').reset();
+                document.getElementById('contact-form').reset(); 
             }, function(error) {
                 alert('Failed to send your message. Please try again later.');
                 console.log('EmailJS Error:', error);
