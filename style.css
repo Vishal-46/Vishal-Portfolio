@@ -40,7 +40,7 @@ body {
     align-items: center;
     z-index: 100;
     transition: .3s;
-    background-color:#000000;
+    background-color:#ffffff;
 }
 
 .header.sticky {
