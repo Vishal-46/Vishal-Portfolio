@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', function() {
         footer.classList.toggle('show-animate', this.innerHeight + this.scrollY >= document.scrollingElement.scrollHeight);
     };
 
-    const roles = ["Data Scientist", "Orator", "Python Programmer"];
+    const roles = ["Data Engineer", "Orator", "Co Founder"];
     let currentIndex = 0;
     const roleElement = document.getElementById("role");
 
