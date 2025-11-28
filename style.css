@@ -21,16 +21,23 @@
 html {
     font-size: 62.5%;
     overflow-x: hidden;
+    max-width: 100%;
 }
 
 body {
     background: var(--bg-color);
     color: var(--text-color);
+    overflow-x: hidden;
+    max-width: 100%;
 }
 
 section {
     min-height: 100vh;
-    padding: 10rem 9% 2rem;
+    padding: 10rem 4% 2rem;
+    max-width: 100%;
+    overflow-x: hidden;
+    width: 100%;
+    margin: 0 auto;
 }
 
 .heading {
@@ -602,135 +609,353 @@ section {
     font-size: 1.4rem;
 }
 
-/* Enhanced Skills Section */
-.skills-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(45rem, 1fr));
-    gap: 3rem;
-    margin-top: 2rem;
+/* Modern Skills & Projects Section */
+.skills-overview {
+    margin-bottom: 4rem;
 }
 
-.skill-category {
-    background: #f9f9f9;
-    padding: 2.5rem;
-    border-radius: 1rem;
-    box-shadow: 0 .3rem .8rem rgba(0, 0, 0, 0.1);
-    border: .1rem solid #e0e0e0;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.skill-category:hover {
-    transform: translateY(-0.5rem);
-    box-shadow: 0 .5rem 1.5rem rgba(0, 0, 0, 0.15);
-}
-
-.category-title {
-    font-size: 2.2rem;
+.skills-title {
+    font-size: 2rem;
     font-weight: 600;
-    color: var(--main-color);
+    color: var(--text-color);
     margin-bottom: 2rem;
-    padding-bottom: 1rem;
-    border-bottom: .2rem solid var(--main-color);
     text-align: center;
 }
 
-.skills-items {
+.skills-chips {
     display: flex;
-    flex-direction: column;
-    gap: 1.8rem;
-}
-
-.skill-item-enhanced {
-    background: #fff;
-    padding: 1.8rem;
-    border-radius: .8rem;
-    box-shadow: 0 .2rem .5rem rgba(0, 0, 0, 0.08);
-    border: .1rem solid #e8e8e8;
-    transition: all 0.3s ease;
-}
-
-.skill-item-enhanced:hover {
-    box-shadow: 0 .4rem 1rem rgba(255, 111, 97, 0.15);
-    border-color: var(--main-color);
-}
-
-.skill-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 1.5rem;
-}
-
-.skill-name {
-    font-size: 1.8rem;
-    font-weight: 600;
-    color: var(--text-color);
-}
-
-.skill-level {
-    display: flex;
-    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 1rem;
+    margin-bottom: 2rem;
 }
 
-.level-bar {
-    width: 8rem;
-    height: .6rem;
-    background: #e0e0e0;
-    border-radius: .3rem;
+.skill-chip {
+    background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+    border: .2rem solid;
+    border-radius: 2rem;
+    padding: 0.8rem 1.6rem;
+    font-size: 1.3rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    position: relative;
     overflow: hidden;
 }
 
-.level-fill {
+.skill-chip::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, var(--main-color), #ff8a7a);
-    border-radius: .3rem;
-    transition: width 0.8s ease;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.6), transparent);
+    transition: left 0.6s ease;
 }
 
-.level-text {
-    font-size: 1.3rem;
-    font-weight: 500;
+.skill-chip:hover::before {
+    left: 100%;
+}
+
+.skill-chip.expert {
+    border-color: #28a745;
+    color: #28a745;
+}
+
+.skill-chip.advanced {
+    border-color: var(--main-color);
     color: var(--main-color);
-    min-width: 7rem;
+}
+
+.skill-chip.intermediate {
+    border-color: #ffc107;
+    color: #e67e22;
+}
+
+.skill-chip.beginner {
+    border-color: #6c757d;
+    color: #6c757d;
+}
+
+.skill-chip:hover {
+    transform: translateY(-0.3rem) scale(1.05);
+    box-shadow: 0 0.5rem 1.5rem rgba(0,0,0,0.15);
+}
+
+.skill-chip.expert:hover {
+    background: #28a745;
+    color: white;
+}
+
+.skill-chip.advanced:hover {
+    background: var(--main-color);
+    color: white;
+}
+
+.skill-chip.intermediate:hover {
+    background: #ffc107;
+    color: white;
+}
+
+.skill-chip.beginner:hover {
+    background: #6c757d;
+    color: white;
+}
+
+/* Container fixes */
+.container {
+    width: 100%;
+    max-width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    overflow: hidden;
+}
+
+.container {
+    width: 100%;
+    max-width: 120rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    margin-left: auto;
+    margin-right: auto;
+    overflow: hidden;
+}
+
+/* Section constraints */
+section {
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+}
+
+/* Film Tape Carousel */
+.projects-carousel-section {
+    margin-top: 4rem;
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+}
+
+.projects-title {
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--text-color);
+    margin-bottom: 3rem;
     text-align: center;
 }
 
-.skill-projects {
+.film-strip-container {
+    position: relative;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    border-radius: 1.5rem;
+    overflow: hidden;
+    padding: 3rem 0;
+    box-shadow: 0 1rem 2rem rgba(0,0,0,0.1);
+    margin: 0 auto;
+    width: 90%;
+    max-width: 120rem;
+    border: 0.1rem solid #dee2e6;
+}
+
+.film-strip {
+    position: relative;
+    overflow: hidden;
+    height: 28rem;
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 50%, #ffffff 100%);
+    width: 100%;
+}
+
+.film-track {
+    display: flex;
+    animation: filmRoll 25s linear infinite;
+    will-change: transform;
+    width: max-content;
+}
+
+.film-card {
+    flex: 0 0 18rem;
+    height: 22rem;
+    margin: 0 0.5rem;
+    position: relative;
+}
+
+.film-frame {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+    border: 0.2rem solid #dee2e6;
+    border-radius: 1rem;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    transition: all 0.3s ease;
+    box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.film-frame:hover {
+    transform: translateY(-0.5rem) scale(1.02);
+    box-shadow: 0 1rem 2rem rgba(255,111,97,0.15);
+    border-color: var(--main-color);
+}
+
+.film-frame::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 0.3rem;
+    background: linear-gradient(90deg, var(--main-color), #ff8a7a, var(--main-color));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.film-frame:hover::before {
+    opacity: 1;
+}
+
+/* Project Image Styling */
+.project-image {
+    width: 100%;
+    margin-bottom: 1rem;
+    border-radius: 0.8rem;
+    overflow: hidden;
+    box-shadow: 0 0.3rem 0.8rem rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.project-image img {
+    width: 100%;
+    height: 8rem;
+    object-fit: cover;
+    display: block;
+    border-radius: 0.8rem;
+    transition: transform 0.3s ease;
+}
+
+.project-image:hover {
+    transform: scale(1.05);
+}
+
+.project-image:hover img {
+    transform: scale(1.1);
+}
+
+.film-frame h6 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--text-color);
+    text-align: center;
+    margin-bottom: 0.5rem;
+    line-height: 1.2;
+}
+
+.project-type {
+    font-size: 1rem;
+    color: var(--main-color);
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05rem;
+}
+
+.tech-mini {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.8rem;
+    justify-content: center;
+    gap: 0.3rem;
+    margin-bottom: 1rem;
 }
 
-.project-link {
-    display: inline-block;
-    padding: 0.6rem 1.2rem;
+.tech-mini span {
+    background: var(--main-color);
+    color: white;
+    padding: 0.2rem 0.6rem;
+    border-radius: 1rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.film-btn {
     background: linear-gradient(135deg, var(--text-color), #333);
-    color: #fff;
+    color: white;
+    padding: 0.6rem 1.2rem;
+    border-radius: 2rem;
     text-decoration: none;
-    border-radius: .5rem;
-    font-size: 1.3rem;
-    font-weight: 500;
+    font-size: 1.1rem;
+    font-weight: 600;
     transition: all 0.3s ease;
-    border: .1rem solid var(--text-color);
+    text-align: center;
 }
 
-.project-link:hover {
+.film-btn:hover {
     background: linear-gradient(135deg, var(--main-color), #ff8a7a);
     transform: translateY(-0.2rem);
-    box-shadow: 0 .3rem .6rem rgba(255, 111, 97, 0.3);
-    color: #fff;
+    box-shadow: 0 0.5rem 1rem rgba(255,111,97,0.4);
 }
 
-/* Remove old skill card styles */
-.skills-card-container,
-.skill-card,
-.skill-card-inner,
-.skill-card-front,
-.skill-card-back,
-.skill-dropdown,
-.dropdown-btn,
-.dropdown-content {
+/* Film Perforations */
+.film-perforations {
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 1rem;
+    background: linear-gradient(to right, 
+        transparent 0%, 
+        transparent 10%, 
+        #dee2e6 10%, 
+        #dee2e6 20%, 
+        transparent 20%, 
+        transparent 30%
+    );
+    background-size: 2rem 100%;
+    z-index: 10;
+}
+
+.film-perforations.top {
+    top: 1rem;
+}
+
+.film-perforations.bottom {
+    bottom: 1rem;
+}
+
+/* Animation */
+@keyframes filmRoll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+/* Pause animation on hover */
+.film-strip-container:hover .film-track {
+    animation-play-state: paused;
+}
+
+/* Remove old styles */
+.tech-section,
+.tech-category-title,
+.tech-tags-container,
+.tech-tag,
+.tech-name,
+.tech-level,
+.featured-projects,
+.project-showcase,
+.project-card,
+.project-tech,
+.mini-tag,
+.project-btn {
     display: none;
 }
 
@@ -1040,42 +1265,121 @@ section:nth-child(odd) .animate.scroll,
         height: 45px;
     }
 
-    /* Enhanced Skills Mobile Responsive */
-    .skills-grid {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-    }
-
-    .skill-category {
-        padding: 2rem;
-    }
-
-    .category-title {
-        font-size: 2rem;
-    }
-
-    .skill-header {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 1rem;
-    }
-
-    .skill-level {
+    /* Mobile Film Tape */
+    .projects-carousel-section {
         width: 100%;
-        justify-content: space-between;
+        max-width: 100%;
+        overflow: hidden;
+        padding: 0;
+        margin-top: 2rem;
+    }
+    
+    .skills-chips {
+        gap: 0.8rem;
+        justify-content: center;
+        flex-wrap: wrap;
+        width: 100%;
+        max-width: 100%;
+        padding: 0 1rem;
     }
 
-    .level-bar {
-        width: 12rem;
-    }
-
-    .skill-projects {
-        margin-top: 1rem;
-    }
-
-    .project-link {
-        font-size: 1.2rem;
+    .skill-chip {
+        font-size: 1rem;
         padding: 0.5rem 1rem;
+    }
+
+    .projects-carousel-section {
+        width: 100%;
+        max-width: 100%;
+        overflow: hidden;
+        padding: 0;
+    }
+
+    .film-strip-container {
+        margin: 0 auto;
+        width: 95%;
+        max-width: 100%;
+        border-radius: 1rem;
+        padding: 2rem 0;
+    }
+
+    .film-strip {
+        height: 25rem;
+        width: 100%;
+    }
+
+    .film-card {
+        flex: 0 0 14rem;
+        height: 20rem;
+        margin: 0 0.4rem;
+    }
+
+    .film-frame {
+        padding: 1.2rem;
+    }
+
+    .project-image {
+        margin-bottom: 0.8rem;
+    }
+
+    .project-image img {
+        height: 6rem;
+    }
+
+    .film-frame h6 {
+        font-size: 1.3rem;
+        line-height: 1.3;
+    }
+
+    .project-type {
+        font-size: 0.9rem;
+    }
+
+    .tech-mini {
+        gap: 0.4rem;
+    }
+
+    .tech-mini span {
+        font-size: 0.8rem;
+        padding: 0.3rem 0.6rem;
+    }
+
+    .film-btn {
+        padding: 0.6rem 1.2rem;
+        font-size: 1rem;
+    }
+
+    .film-perforations {
+        height: 0.8rem;
+        background-size: 1.5rem 100%;
+    }
+
+    /* Slower animation on mobile for better UX */
+    .film-track {
+        animation-duration: 35s;
+    }
+
+    .container {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+    
+    section {
+        padding: 8rem 2% 2rem;
+    }
+
+    .home-content {
+        margin-right: 0;
+    }
+
+    .home-img {
+        margin-top: 2rem;
+        text-align: center;
+    }
+
+    .home-img img {
+        max-width: 80%;
+        height: auto;
     }
 }
 
