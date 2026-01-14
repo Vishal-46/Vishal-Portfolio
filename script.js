@@ -30,12 +30,19 @@ document.addEventListener('DOMContentLoaded', function() {
 
         let header = document.querySelector('header');
         header.classList.toggle('sticky', window.scrollY > 100);
-        menuIcon.classList.remove('bx-x');
-        navbar.classList.remove('active');
         
         let footer = document.querySelector('footer');
         footer.classList.toggle('show-animate', this.innerHeight + this.scrollY >= document.scrollingElement.scrollHeight);
     };
+
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            if (window.innerWidth <= 991) {
+                menuIcon.classList.remove('bx-x');
+                navbar.classList.remove('active');
+            }
+        });
+    });
 
     const roles = ["Data Engineer", "Orator", "Co Founder"];
     let currentIndex = 0;

@@ -168,6 +168,8 @@ section {
     padding: 0 9%;
     background-size: cover;
     background-position: center;
+    position: relative;
+    gap: 3rem;
 }
 
 .home-content {
@@ -291,15 +293,17 @@ section {
 }
 
 .home-image {
-    flex: 1;
+    flex: 1 1 30rem;
     display: flex;
-    justify-content: flex-end;
-    max-width: 400px;
+    justify-content: center;
+    align-items: center;
+    max-width: 40rem;
     width: 100%;
     padding: 20px;
     position: relative;
     overflow: hidden;
     border-radius: 10px;
+    z-index: 99;
 }
 
 .home-image img {
@@ -1202,6 +1206,25 @@ section:nth-child(odd) .animate.scroll,
 
     #menu-icon {
         display: block;
+    }
+
+    .home {
+        justify-content: center;
+        text-align: center;
+    }
+
+    .home-content {
+        text-align: center;
+    }
+
+    .home .btn-box {
+        width: auto;
+        justify-content: center;
+        margin: 0 auto 1.2rem;
+    }
+
+    .home-image {
+        margin: 3rem auto 0;
     }
 
     .navbar {
